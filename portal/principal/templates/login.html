@@ -1,0 +1,22 @@
+<!-- Esta plantilla extiende a la base -->
+{% extends "base.html" %}
+<!-- Damos contenido al bloque de título -->
+{% block titulo %}
+Acceso al sistema
+{% endblock %}
+<!-- Damos contenido al bloque de contenido -->
+{% block contenido %}
+<!-- Se define el formulario. Ojo al action="." para que la misma vista
+     reciba el formulario con los datos -->
+<form action="." method="POST" class="formulario_login">
+    <!-- Se carga el formulario recibido desde la vista con <p></p> para
+         separar los campos -->
+    {{ form.as_p }}
+    <!-- Django obliga a incluir en los formularios este token para evitar ataques -->
+    {% csrf_token %}
+    <input type="submit" value="Quiero entrá" class="boton_login">
+</form>
+<br/>
+<!-- Enlace al registro de nuevos usuarios -->
+<a href="/registro/">Darse de alta</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!-- Esta plantilla extiende a la base -->
+{% extends "base.html" %}
+<!-- Damos contenido al bloque de título -->
+{% block titulo %}
+Página principal
+{% endblock %}
+<!-- Damos contenido al bloque de contenido -->
+{% block contenido %}
+<!-- Se muestra el nombre de usuario -->
+Hola {{usuario.username}}, ya estás registrado...<br/>
+Tus cursos son:<br/>
+<!-- Se recorre la lista 'curso' mostrando las abreviaturas de los cursos -->
+{% for curso in cursos %}{{curso.abrev}}<br/>{%endfor%}
+{% endblock %}

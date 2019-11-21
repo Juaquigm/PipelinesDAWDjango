@@ -1,0 +1,13 @@
+<!-- Plantilla de base para las demás -->
+<html>
+<head>
+<!-- Se define el bloque de título que se detallará en las demás vistas -->
+<title>{% block titulo %}{% endblock %}</title>
+</head>
+<body>
+<!-- Si hay una sesión iniciada muestra el enlace al logout -->
+{% if usuario.username %}<a href="/logout/">Ajuera!!!</a><br/>{% endif %}
+<!-- Se define el bloque de contenido -->
+{% block contenido %}{% endblock %}
+</body>
+</html>
